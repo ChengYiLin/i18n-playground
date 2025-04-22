@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 
 const HomePage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
 
   return (
     <div className="container mx-auto px-4 py-12">

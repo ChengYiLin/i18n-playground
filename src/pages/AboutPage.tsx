@@ -1,37 +1,36 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const AboutPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('about');
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6 text-center">{t('about.title')}</h1>
-        <h2 className="text-2xl font-semibold mb-8 text-muted-foreground text-center">{t('about.subtitle')}</h2>
+        <h1 className="text-4xl font-bold mb-6 text-center">{t('title')}</h1>
+        <h2 className="text-2xl font-semibold mb-8 text-muted-foreground text-center">{t('subtitle')}</h2>
         
         <div className="mb-12">
-          <p className="text-lg mb-6">{t('about.description')}</p>
+          <p className="text-lg mb-6">{t('description')}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <Card>
             <CardHeader>
-              <CardTitle>{t('about.mission')}</CardTitle>
+              <CardTitle>{t('mission')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>{t('about.missionText')}</p>
+              <p>{t('missionText')}</p>
             </CardContent>
           </Card>
           
           <Card>
             <CardHeader>
-              <CardTitle>{t('about.vision')}</CardTitle>
+              <CardTitle>{t('vision')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>{t('about.visionText')}</p>
+              <p>{t('visionText')}</p>
             </CardContent>
           </Card>
         </div>

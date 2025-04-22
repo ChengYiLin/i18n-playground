@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   return (
     <footer className="bg-muted text-muted-foreground py-8 mt-auto">

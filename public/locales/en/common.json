@@ -1,0 +1,18 @@
+
+{
+  "header": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "footer": {
+    "copyright": "© 2025 i18n Demo App. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "chineseTraditional": "Traditional Chinese"
+  }
+}

@@ -1,0 +1,15 @@
+
+{
+  "title": "Contact Us",
+  "subtitle": "We'd love to hear from you",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "send": "Send",
+  "address": "Address",
+  "addressLine": "5 Information Road, Tech City",
+  "phone": "Phone",
+  "phoneNumber": "123-456-7890",
+  "emailAddress": "Email",
+  "emailAddressValue": "contact@i18ndemo.com"
+}

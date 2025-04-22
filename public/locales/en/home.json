@@ -1,0 +1,7 @@
+
+{
+  "title": "Welcome to our Multilingual App",
+  "subtitle": "This is an internationalization demo using react-i18next",
+  "description": "This application demonstrates how to create a multilingual website using react-i18next. You can change the language by clicking on the language switcher at the top.",
+  "button": "Learn More"
+}
