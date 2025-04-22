@@ -12,9 +12,6 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
-// Import i18n configuration
-import "./i18n";
-
 const queryClient = new QueryClient();
 
 const App = () => {
