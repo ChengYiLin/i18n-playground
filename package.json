@@ -1,6 +1,5 @@
 {
-  "name": "vite_react_shadcn_ts",
-  "private": true,
+  "name": "i18n-playground",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
