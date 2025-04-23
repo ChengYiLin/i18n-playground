@@ -7,7 +7,13 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8080,
+    port: 3000,
+  },
+  define: {
+    "process.env": {
+      VITE_APP_TOLGEE_API_URL: process.env.VITE_APP_TOLGEE_API_URL,
+      VITE_APP_TOLGEE_API_KEY: process.env.VITE_APP_TOLGEE_API_KEY, 
+    },
   },
   plugins: [
     react(),
