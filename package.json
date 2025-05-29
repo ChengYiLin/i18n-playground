@@ -7,7 +7,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i18n-analyze": "sh scripts/i18n-analyze.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

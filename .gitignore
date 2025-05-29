@@ -28,3 +28,8 @@ dist-ssr
 # tolgee
 tolgee/data
 .tolgeerc
+
+# POC
+scripts/missing-key.json
+scripts/unused-key.json
+scripts/key-stats.json
