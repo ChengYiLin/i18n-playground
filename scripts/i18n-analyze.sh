@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Set output directory to the same directory as this script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Set output directory to ./i18n
+SCRIPT_DIR="./scripts"
 
 # Example JSON content
 UNUSED_JSON_CONTENT='{
