@@ -6,6 +6,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    outputs: # ✅ Declare both outputs
+      missingKeyCount: ${{ steps.count_keys.outputs.missing }}
+      unusedKeyCount: ${{ steps.count_keys.outputs.unused }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -14,6 +19,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package.json', 'pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm install
@@ -24,5 +37,12 @@ jobs:
       - name: Run i18n-analyze script
         run: npm run i18n-analyze
 
-      - name: Count total keys in scripts/missing-key.json
-        run: ./scripts/count-keys.sh scripts/missing-key.json
+      - name: Count total keys in scripts/missing-key.json and scripts/unused-key.json
+        id: count_keys
+        run: |
+          MISSING=$(jq 'keys | length' scripts/missing-key.json)
+          UNUSED=$(jq 'keys | length' scripts/unused-key.json)
+          echo "Missing keys: $MISSING"
+          echo "Unused keys: $UNUSED"
+          echo "missing=$MISSING" >> $GITHUB_OUTPUT
+          echo "unused=$UNUSED" >> $GITHUB_OUTPUT
