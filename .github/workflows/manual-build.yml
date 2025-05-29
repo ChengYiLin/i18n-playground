@@ -1,16 +1,14 @@
-name: Manual Build
+name: i18n Analyze and Upload
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
+  analyze:
     runs-on: ubuntu-latest
-
-    outputs: # ✅ Declare both outputs
-      missingKeyCount: ${{ steps.count_keys.outputs.missing }}
-      unusedKeyCount: ${{ steps.count_keys.outputs.unused }}
-
+    outputs:
+      missing: ${{ steps.count.outputs.missing }}
+      unused: ${{ steps.count.outputs.unused }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,12 +35,10 @@ jobs:
       - name: Run i18n-analyze script
         run: npm run i18n-analyze
 
-      - name: Count total keys in scripts/missing-key.json and scripts/unused-key.json
-        id: count_keys
+      - name: Count keys
+        id: count
         run: |
           MISSING=$(jq 'keys | length' scripts/missing-key.json)
           UNUSED=$(jq 'keys | length' scripts/unused-key.json)
-          echo "Missing keys: $MISSING"
-          echo "Unused keys: $UNUSED"
           echo "missing=$MISSING" >> $GITHUB_OUTPUT
           echo "unused=$UNUSED" >> $GITHUB_OUTPUT
