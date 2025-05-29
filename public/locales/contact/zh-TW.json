@@ -1,0 +1,14 @@
+{
+  "address": "地址",
+  "addressLine": "台北市信義區信義路5段7號",
+  "email": "電子郵件",
+  "emailAddress": "電子郵件",
+  "emailAddressValue": "contact@i18ndemo.com",
+  "message": "訊息",
+  "name": "姓名",
+  "phone": "電話",
+  "phoneNumber": "02-1234-5678",
+  "send": "發送",
+  "subtitle": "我們很樂意收到您的來信",
+  "title": "聯絡我們"
+}

@@ -1,0 +1,17 @@
+{
+  "footer": {
+    "copyright": "© 2025 i18n示範應用. 版權所有.",
+    "privacy": "隱私政策",
+    "terms": "使用條款"
+  },
+  "header": {
+    "about": "關於我們",
+    "contact": "聯絡我們",
+    "home": "首頁",
+    "language": "語言"
+  },
+  "languageSwitcher": {
+    "chineseTraditional": "繁體中文",
+    "english": "英文"
+  }
+}
