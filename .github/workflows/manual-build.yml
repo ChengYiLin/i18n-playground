@@ -42,3 +42,11 @@ jobs:
           UNUSED=$(jq 'keys | length' scripts/unused-key.json)
           echo "missing=$MISSING" >> $GITHUB_OUTPUT
           echo "unused=$UNUSED" >> $GITHUB_OUTPUT
+      
+      - name: Upload analyze result as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-result
+          path: |
+            scripts/missing-key.json
+            scripts/unused-key.json
