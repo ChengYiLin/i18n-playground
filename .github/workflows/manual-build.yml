@@ -35,13 +35,23 @@ jobs:
       - name: Run i18n-analyze script
         run: npm run i18n-analyze
 
+
+        
       - name: Count keys
         id: count
         run: |
           MISSING=$(jq 'keys | length' scripts/missing-key.json)
           UNUSED=$(jq 'keys | length' scripts/unused-key.json)
+          DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
           echo "missing=$MISSING" >> $GITHUB_OUTPUT
           echo "unused=$UNUSED" >> $GITHUB_OUTPUT
+
+          echo "{
+            \"date\": \"$DATE\",
+            \"missing-keys\": $MISSING,
+            \"unused-keys\": $UNUSED
+          }" > scripts/summary.json
       
       - name: Upload analyze result as artifact
         uses: actions/upload-artifact@v4
@@ -50,3 +60,4 @@ jobs:
           path: |
             scripts/missing-key.json
             scripts/unused-key.json
+            scripts/summary.json  
